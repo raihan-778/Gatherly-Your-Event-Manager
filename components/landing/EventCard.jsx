@@ -1,13 +1,26 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ActionButtons } from "../ActionButtons";
 
-export const EventCard = () => {
+export const EventCard = ({ event }) => {
+  const {
+    id,
+    _id,
+    name,
+    details,
+    location,
+    imageUrl,
+    interested_ids,
+    going_ids,
+    swags,
+  } = event;
+
   return (
     <div className="overflow-hidden rounded-md bg-[#242526]">
-      <details
+      <Image
         width={500}
         height={500}
-        src="/google-io-2023-1.png"
+        src={imageUrl}
         alt="Event 1"
         className="w-full"
       />
@@ -16,13 +29,11 @@ export const EventCard = () => {
         <Link href={`details/1`} className="font-bold text-lg">
           Google I/O Extended
         </Link>
-        <p className="text-[#9C9C9C] text-sm mt-1">
-          Rangpur, Dhaka, Bangladesh, Rangpur, Bangladesh
-        </p>
+        <p className="text-[#9C9C9C] text-sm mt-1">{location}</p>
         <div className="text-[#737373] text-sm mt-1">
-          <span>1k Interested</span>
+          <span>{interested_ids?.length} Interested</span>
           <span>|</span>
-          <span>40K Going</span>
+          <span>{going_ids?.length} Going</span>
         </div>
 
         {/* <!-- Buttons --> */}

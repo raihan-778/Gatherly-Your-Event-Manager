@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import localFont from "next/font/local";
 import "./globals.css";
+import { dbConnect } from "../service/mongo";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,7 +19,9 @@ export const metadata = {
   description: "Gatherly your event management console",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  dbConnect();
+
   return (
     <html lang="en">
       <body
