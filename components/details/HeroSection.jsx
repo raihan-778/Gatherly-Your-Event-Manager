@@ -25,7 +25,11 @@ export const HeroSection = ({ eventInfo }) => {
           </div>
         </div>
 
-        <ActionButtons fromDetails={true} />
+        <ActionButtons
+          interestedUserIds={eventInfo?.interested_ids}
+          eventId={eventInfo?.id}
+          fromDetails={true}
+        />
       </div>
     </section>
   );

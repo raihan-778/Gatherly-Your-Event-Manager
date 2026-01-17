@@ -4,6 +4,7 @@ import {
   replaceMongoIdInArray,
   replaceMongoIdInObject,
 } from "@/utils/data-util";
+import mongoose from "mongoose";
 
 const getAllEvents = async () => {
   const allEvents = await eventModel.find().lean(); //here using link has been removed all metadata related to mongodb except the field you defined. so here no other mongodb method will work.so be carefull while using this lean method
@@ -51,7 +52,7 @@ async function updateInterest(eventId, authId) {
 export {
   createUser,
   findUserByCredentials,
-  updateInterest,
   getAllEvents,
   getEventById,
+  updateInterest,
 };

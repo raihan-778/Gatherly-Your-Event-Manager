@@ -36,7 +36,7 @@ export const EventCard = ({ event }) => {
         </div>
 
         {/* <!-- Buttons --> */}
-        <ActionButtons />
+        <ActionButtons interestedUserIds={interested_ids} eventId={id} />
       </div>
     </div>
   );
