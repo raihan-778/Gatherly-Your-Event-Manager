@@ -14,8 +14,6 @@ export const EventCard = ({ event }) => {
     swags,
   } = event;
 
-  console.log("event detail", event);
-
   return (
     <div className="overflow-hidden rounded-md bg-[#242526]">
       <Image

@@ -1,7 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import localFont from "next/font/local";
-import "./globals.css";
 import { dbConnect } from "../service/mongo";
+import "./globals.css";
+import AuthProvider from "./providers/AuthProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,8 +28,10 @@ export default async function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <main class="py-8">{children}</main>
+        <AuthProvider>
+          <Navbar />
+          <main class="py-8">{children}</main>
+        </AuthProvider>
       </body>
     </html>
   );
