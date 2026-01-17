@@ -5,7 +5,6 @@ import { ActionButtons } from "../ActionButtons";
 export const EventCard = ({ event }) => {
   const {
     id,
-    _id,
     name,
     details,
     location,
@@ -14,6 +13,8 @@ export const EventCard = ({ event }) => {
     going_ids,
     swags,
   } = event;
+
+  console.log("event detail", event);
 
   return (
     <div className="overflow-hidden rounded-md bg-[#242526]">
@@ -26,8 +27,8 @@ export const EventCard = ({ event }) => {
       />
 
       <div className="p-3">
-        <Link href={`details/1`} className="font-bold text-lg">
-          Google I/O Extended
+        <Link href={`details/${id}`} className="font-bold text-lg">
+          {name}
         </Link>
         <p className="text-[#9C9C9C] text-sm mt-1">{location}</p>
         <div className="text-[#737373] text-sm mt-1">

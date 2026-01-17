@@ -1,4 +1,4 @@
-export const EventDetails = () => {
+export const EventDetails = ({ params }) => {
   return (
     <div className="col-span-3">
       <div className="w-full h-full bg-[#242526] p-6 rounded-lg">
